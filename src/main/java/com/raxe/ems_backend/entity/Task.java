@@ -1,5 +1,6 @@
 package com.raxe.ems_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,6 +33,7 @@ public class Task {
     private Date start_date;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Employee employee;
 
 }

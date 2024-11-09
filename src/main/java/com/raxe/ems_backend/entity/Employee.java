@@ -1,5 +1,6 @@
 package com.raxe.ems_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,6 +32,7 @@ public class Employee {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "employee_id")
+    @JsonIgnore
     private List<Task> tasks = new ArrayList<>();
 
 }
