@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,5 +28,9 @@ public class Employee {
 
     @Column(name = "email_id", nullable = false, unique = true)
     private String email;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "employee_id")
+    private List<Task> tasks = new ArrayList<>();
 
 }

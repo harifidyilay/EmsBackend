@@ -1,9 +1,13 @@
 package com.raxe.ems_backend.dto;
 
+import com.raxe.ems_backend.entity.Task;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 // DTO (Data Transfer Object) is a simple Java class used to transfer data
 // between different layers of an application | Specificaly Between Client - Server | in Controller
@@ -17,6 +21,7 @@ public class EmployeeDto {
     private String firstName;
     private String lastName;
     private String email;
+    private List<Task> tasks = new ArrayList<>();
 }
 
 //    Benefits of Using DTOs:
